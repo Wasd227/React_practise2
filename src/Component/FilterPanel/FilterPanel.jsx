@@ -26,7 +26,7 @@ const FilterPanel = ({
           </a>
           {uniqueUsers.map(user => (
             <a
-              key={user}
+              key={user.id}
               data-cy="FilterUser"
               href="#/"
               className={activeUser === user ? 'is-active' : ''}

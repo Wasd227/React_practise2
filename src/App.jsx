@@ -25,7 +25,7 @@ export const App = () => {
   const getFilteredProducts = () => {
     return products.filter(product => {
       const userMatch =
-        activeUser === 'All' || product.user?.name === activeUser;
+        activeUser === 'All' || product.user.name === activeUser;
       const searchMatch = product.name
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
@@ -113,6 +113,10 @@ export const App = () => {
 
       return acc;
     }, []);
+
+  if (!uniqueUsers.includes('John')) {
+    uniqueUsers.push('John');
+  }
 
   const uniqueCategories = products
     .map(p => p.category?.title)
